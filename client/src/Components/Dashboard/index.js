@@ -23,7 +23,7 @@ function Dashboard() {
   const fetchTasks = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5000/api/tasks", {
+      const res = await axios.get("https://taskmanager6.onrender.com/api/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -40,7 +40,7 @@ function Dashboard() {
     e.preventDefault();
     const token = localStorage.getItem("token");
     try {
-      await axios.post("http://localhost:5000/api/tasks", form, {
+      await axios.post("https://taskmanager6.onrender.com/api/tasks", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Task Created!");
@@ -61,7 +61,7 @@ function Dashboard() {
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+      await axios.delete(`https://taskmanager6.onrender.com/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTasks(); // Refresh task list

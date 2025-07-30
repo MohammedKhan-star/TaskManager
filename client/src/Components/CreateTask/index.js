@@ -5,14 +5,16 @@ import { motion } from "framer-motion";
 import "./index.css"; // Assuming you have a CSS file for styles
 
 
-function Dashboard() {
+function CreateTask() {
   const [tasks, setTasks] = useState([]);
   const navigate = useNavigate();
+
+
 
   const fetchTasks = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5000/api/tasks", {
+      const res = await axios.get("https://taskmanager6.onrender.com/api/tasks", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -29,7 +31,7 @@ function Dashboard() {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+      await axios.delete(`https://taskmanager6.onrender.com/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTasks(); // Refresh the list
@@ -111,4 +113,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default CreateTask;
