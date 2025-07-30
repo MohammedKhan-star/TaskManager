@@ -32,7 +32,7 @@ app.use("/api/auth", authRoutes);
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port http://localhost:${PORT}`);
 });
 
 const taskRoutes = require("./routes/tasks");
