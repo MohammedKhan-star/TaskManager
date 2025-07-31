@@ -4,12 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const cors = require("cors");
 
-app.use(cors({
-  origin: "https://your-task-app.vercel.app", // <-- Replace with your Vercel frontend URL
-  credentials: true
-}));
 
 const app = express();
 
