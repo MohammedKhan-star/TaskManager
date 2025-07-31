@@ -13,7 +13,7 @@ function Register() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", form);
+      await axios.post("https://taskmanager6.onrender.com/api/auth/register", form);
       navigate("/");
     } catch (err) {
       alert(err.response.data.message);
